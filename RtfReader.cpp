@@ -8,7 +8,7 @@ bool RtfReader::RtfStream2TextString(string &outstring, istream &instream)
 	using namespace format;
 	try
 	{
-		// "{\r" 开头即认为为RTF文件
+		// "{\r" at the beginning, the RTF file is considered
 		char head[3] = { 0 };
 		instream.read(head, sizeof(head));
 		if (head[0] != '{' || head[1] != '\\' && head[2] != 'r')
