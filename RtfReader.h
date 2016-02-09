@@ -7,6 +7,8 @@
 #else
 #define RTFREADER_EXT  _declspec(dllimport)
 #endif
+#else
+#define RTFREADER_EXT
 #endif
 
 #include <string>
