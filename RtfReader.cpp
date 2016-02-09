@@ -11,7 +11,7 @@ bool RtfReader::RtfStream2TextString(string &outstring, istream &instream)
 		// "{\r" at the beginning, the RTF file is considered
 		char head[3] = { 0 };
 		instream.read(head, sizeof(head));
-		if (head[0] != '{' || head[1] != '\\' && head[2] != 'r')
+		if (head[0] != '{' || head[1] != '\\' || head[2] != 'r')
 		{
 			return false;
 		}
