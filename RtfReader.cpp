@@ -41,5 +41,11 @@ bool RtfReader::RtfString2TextString(string &outstring, const string &instring)
 bool RtfReader::RtfFile2TextString(string &outstring, const char * filename)
 {
 	ifstream file(filename);
-	return RtfStream2TextString(outstring, file);
+	if (file.is_open())
+	{
+		bool ret = RtfStream2TextString(outstring, file);
+		file.close();
+		return ret;	
+	}
+	return false;
 }
